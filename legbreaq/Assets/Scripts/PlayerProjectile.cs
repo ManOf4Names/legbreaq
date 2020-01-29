@@ -16,7 +16,13 @@ public class PlayerProjectile : MonoBehaviour
                 Debug.Log("Damage Delt");
             }
             //delete projectile 
+
             Destroy(gameObject);
         }
+    }
+
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
     }
 }

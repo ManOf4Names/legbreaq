@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     private Vector2 direction;
     private Animator animator;
+    public Transform weapon;
 
     void Start()
     {
@@ -20,6 +21,21 @@ public class PlayerMovement : MonoBehaviour
     {
         TakeInput();
         Move();
+        RotateWeapon();
+    }
+
+
+    /// <summary>
+    /// Rotate the weapon with the mouse
+    /// </summary>
+    private void RotateWeapon()
+    {
+        //rotate gun arm
+        Vector3 mousePos = Input.mousePosition;
+        Vector3 screenPoint = Camera.main.WorldToScreenPoint(transform.localPosition);
+        Vector2 offset = new Vector2(mousePos.x - screenPoint.x, mousePos.y - screenPoint.y);
+        float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
+        weapon.rotation = Quaternion.Euler(0, 0, angle);
     }
 
     private void Move()
