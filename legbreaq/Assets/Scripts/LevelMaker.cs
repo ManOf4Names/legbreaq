@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LevelMaker : MonoBehaviour
 {
-    enum gridSpace {empty, room};
+    enum gridSpace {empty, room, spawnRoom};
     gridSpace[,] grid;
     int roomHeight, roomWidth;
     Vector2 roomSizeWorldUnits = new Vector2(100, 100);
@@ -19,11 +19,33 @@ public class LevelMaker : MonoBehaviour
     public float chanceWalkerDestoy = 0.05f;
     public int maxWalkers = 10;
     public float percentToFill = 0.2f;
-    public GameObject roomObj;
+    public GameObject LRUD;
+    public GameObject L;
+    public GameObject LR;
+    public GameObject LRU;
+    public GameObject LRD;
+    public GameObject LU;
+    public GameObject LUD;
+    public GameObject LD;
+    public GameObject R;
+    public GameObject RU;
+    public GameObject RD;
+    public GameObject RUD;
+    public GameObject U;
+    public GameObject UD;
+    public GameObject D;
+    public GameObject spawnRoom;
+
+    int spawnX = 0;
+    int spawnY = 0;
+
+
+    GameObject roomObj;
     void Start()
     {
         Setup();
         CreateRooms();
+        FixRoom();
         SpawnLevel();
     }
     void Setup()
@@ -49,8 +71,7 @@ public class LevelMaker : MonoBehaviour
         walker newWalker = new walker();
         newWalker.dir = RandomDirection();
         //find center of grid
-        Vector2 spawnPos = new Vector2(Mathf.RoundToInt(roomWidth / 2.0f),
-                                        Mathf.RoundToInt(roomHeight / 2.0f));
+        Vector2 spawnPos = new Vector2(Mathf.RoundToInt(roomWidth / 2.0f), Mathf.RoundToInt(roomHeight / 2.0f));
         newWalker.pos = spawnPos;
         //add walker to list
         walkers.Add(newWalker);
@@ -58,12 +79,22 @@ public class LevelMaker : MonoBehaviour
     void CreateRooms()
     {
         int iterations = 0;//loop will not run forever
+        int angle;
         do
         {
             //create room at position of every walker
             foreach (walker myWalker in walkers)
             {
-                grid[(int)myWalker.pos.x, (int)myWalker.pos.y] = gridSpace.room;
+                if (iterations == 0)
+                {
+                    grid[(int)myWalker.pos.x, (int)myWalker.pos.y] = gridSpace.spawnRoom;
+                }
+                else{
+                    if (grid[(int)myWalker.pos.x, (int)myWalker.pos.y] != gridSpace.spawnRoom)
+                    {
+                        grid[(int)myWalker.pos.x, (int)myWalker.pos.y] = gridSpace.room;
+                    }
+                }
             }
             //chance: destroy walker
             int numberChecks = walkers.Count; //might modify count while in this loop
@@ -122,26 +153,152 @@ public class LevelMaker : MonoBehaviour
                 break;
             }
             iterations++;
-        } while (iterations < 100000);
+        } while (iterations < 10000);
     }
    
     void SpawnLevel()
     {
+        int choice = Mathf.FloorToInt(Random.value * 3.99f);
+        int rand;
+        string s = "";
+
         for (int x = 0; x < roomWidth; x++)
         {
             for (int y = 0; y < roomHeight; y++)
             {
-                switch (grid[x, y])
+                s = "";
+                if (grid[x, y] == gridSpace.room)
                 {
-                    case gridSpace.empty:
-                        break;
-                    case gridSpace.room:
-                        Spawn(x, y, roomObj);
-                        break;
+                    if (grid[x - 1, y] == gridSpace.room || grid[x - 1, y] == gridSpace.spawnRoom)
+                    {
+                        s = s + "L";
+                    }
+                    if (grid[x + 1, y] == gridSpace.room || grid[x + 1, y] == gridSpace.spawnRoom)
+                    {
+                        s = s + "R";
+                    }
+                    if (grid[x, y + 1] == gridSpace.room || grid[x, y + 1] == gridSpace.spawnRoom)
+                    {
+                        s = s + "U";
+                    }
+                    if (grid[x, y - 1] == gridSpace.room || grid[x, y - 1] == gridSpace.spawnRoom)
+                    {
+                        s = s + "D";
+                    }
+
+                    switch (s)
+                    {
+                        case "LRUD":
+                            //rand = Random.Range(0, bottomRooms.Length);
+                            roomObj = LRUD;
+                            Spawn(x, y, roomObj);
+                            break;
+
+                        case "L":
+                            roomObj = L;
+                            Spawn(x, y, roomObj);
+                            break;
+
+                        case "LR":
+                            roomObj = LR;
+                            Spawn(x, y, roomObj);
+                            break;
+
+                        case "LRU":
+                            roomObj = LRU;
+                            Spawn(x, y, roomObj);
+                            break;
+
+                        case "LRD":
+                            roomObj = LRD;
+                            Spawn(x, y, roomObj);
+                            break;
+
+                        case "LU":
+                            roomObj = LU;
+                            Spawn(x, y, roomObj);
+                            break;
+
+                        case "LUD":
+                            roomObj = LUD;
+                            Spawn(x, y, roomObj);
+                            break;
+
+                        case "LD":
+                            roomObj = LD;
+                            Spawn(x, y, roomObj);
+                            break;
+
+                        case "R":
+                            roomObj = R;
+                            Spawn(x, y, roomObj);
+                            break;
+
+                        case "RU":
+                            roomObj = RU;
+                            Spawn(x, y, roomObj);
+                            break;
+
+                        case "RD":
+                            roomObj = RD;
+                            Spawn(x, y, roomObj);
+                            break;
+
+                        case "RUD":
+                            roomObj = RUD;
+                            Spawn(x, y, roomObj);
+                            break;
+
+                        case "U":
+                            roomObj = U;
+                            Spawn(x, y, roomObj);
+                            break;
+
+                        case "UD":
+                            roomObj = UD;
+                            Spawn(x, y, roomObj);
+                            break;
+
+                        case "D":
+                            roomObj = D;
+                            Spawn(x, y, roomObj);
+                            break;
+
+                        default:
+
+                            break;
+
+                    }
                 }
             }
         }
     }
+
+    void FixRoom()
+    {
+        int choice = Mathf.FloorToInt(Random.value * 3.99f);
+        int rand;
+        for (int x = 0; x < roomWidth; x++)
+        {
+            for (int y = 0; y < roomHeight; y++)
+            {
+                if (grid[x, y] == gridSpace.spawnRoom)
+                {
+                        grid[x - 1, y] = gridSpace.room;
+                        grid[x + 1, y] = gridSpace.room;
+                        grid[x, y - 1] = gridSpace.room;
+                        grid[x, y + 1] = gridSpace.room;
+
+                        roomObj = spawnRoom;
+                        Spawn(x, y, roomObj);
+                        spawnX = x;
+                        spawnY = y;
+
+                }
+            }
+        }
+    }
+
     Vector2 RandomDirection()
     {
         //pick random int between 0 and 3
@@ -159,18 +316,20 @@ public class LevelMaker : MonoBehaviour
                 return Vector2.right;
         }
     }
+
     int NumberOfRooms()
     {
         int count = 0;
         foreach (gridSpace space in grid)
         {
-            if (space == gridSpace.room)
+            if (space == gridSpace.spawnRoom || space == gridSpace.room)
             {
                 count++;
             }
         }
         return count;
     }
+
     void Spawn(float x, float y, GameObject toSpawn)
     {
         //find the position to spawn
