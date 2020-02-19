@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerProjectile : MonoBehaviour
+public class PlayerMeleeWeapon : MonoBehaviour
 {
-
     public float damage;
-
+    //Attach this as compoment on sword
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.name != "Player")
@@ -15,15 +14,6 @@ public class PlayerProjectile : MonoBehaviour
                 collision.GetComponent<EnemyRecieveDamage>().DealDamage(damage);
                 Debug.Log("Damage Delt");
             }
-            //delete projectile 
-
-            Destroy(gameObject);
         }
-    }
-
-    private void OnBecameInvisible()
-    {
-        Debug.Log("Bullet Invis");
-        Destroy(gameObject);
     }
 }
