@@ -7,7 +7,7 @@ public class LevelMaker : MonoBehaviour
     enum gridSpace {empty, room, spawnRoom};
     gridSpace[,] grid;
     int roomHeight, roomWidth;
-    Vector2 roomSizeWorldUnits = new Vector2(100, 100);
+    Vector2 roomSizeWorldUnits = new Vector2(1500, 1500);
     public float worldUnitsInOneGridCell = 10;
     struct walker
     {
