@@ -53,6 +53,9 @@ public class LevelMaker : MonoBehaviour
         //find grid size
         roomHeight = Mathf.RoundToInt(roomSizeWorldUnits.x / worldUnitsInOneGridCell);
         roomWidth = Mathf.RoundToInt(roomSizeWorldUnits.y / worldUnitsInOneGridCell);
+        //find grid size
+       // roomHeight = 1000;
+        //roomWidth = 1000;
         //create grid
         grid = new gridSpace[roomWidth, roomHeight];
         //set grid's default state
@@ -335,7 +338,9 @@ public class LevelMaker : MonoBehaviour
         //find the position to spawn
         Vector2 offset = roomSizeWorldUnits / 2.0f;
         Vector2 spawnPos = new Vector2(x, y) * worldUnitsInOneGridCell - offset;
+        Vector3 sp = spawnPos;
+        sp.z = 1.6f;
         //spawn object
-        Instantiate(toSpawn, spawnPos, Quaternion.identity);
+        Instantiate(toSpawn, sp, Quaternion.identity);
     }
 }
