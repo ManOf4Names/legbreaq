@@ -1145,7 +1145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0f4b691df81f064e9bb3f0ea72ce77a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  worldUnitsInOneGridCell: 10
+  worldUnitsInOneGridCell: 200
   chanceWalkerChangeDir: 0.5
   chanceWalkerSpawn: 0.05
   chanceWalkerDestoy: 0.05
