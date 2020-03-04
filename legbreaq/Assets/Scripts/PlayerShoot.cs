@@ -51,7 +51,13 @@ public class PlayerShoot : MonoBehaviour
         }
     }
 
-  
+    private void OnBecameInvisible()
+    {
+        Debug.Log("Bullet Invis");
+        Destroy(gameObject);
+    }
+
+
 
 }
      

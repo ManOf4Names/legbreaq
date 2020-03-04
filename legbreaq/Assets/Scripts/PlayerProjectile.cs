@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerProjectile : MonoBehaviour
 {
-
+    public int secondsToDestroy = 3;
     public float damage;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -13,7 +13,7 @@ public class PlayerProjectile : MonoBehaviour
             if (collision.GetComponent<EnemyRecieveDamage>() != null)
             {
                 collision.GetComponent<EnemyRecieveDamage>().DealDamage(damage);
-                Debug.Log("Damage Delt");
+                Debug.Log("Damage Delt by PlayerProjectile");
             }
             //delete projectile 
 
@@ -21,9 +21,15 @@ public class PlayerProjectile : MonoBehaviour
         }
     }
 
+    // TODO: fix bug doesn't seem to activate ever 
     private void OnBecameInvisible()
     {
         Debug.Log("Bullet Invis");
         Destroy(gameObject);
+    }
+
+    private void Awake()
+    { 
+        Destroy(gameObject, secondsToDestroy);
     }
 }
