@@ -1,8 +1,12 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: 164db42e99b0f964eb3ef67a6db44bee
+=======
 guid: e692f2a2c77fa7b4ebbe9d42982a85be
+>>>>>>> origin/caleb_mechanics
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
