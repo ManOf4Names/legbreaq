@@ -40,7 +40,9 @@ public class PlayerShoot : MonoBehaviour
             GameObject bullet = Instantiate(projectile, source.position, source.rotation);
             fireRateCounter = timeBetweenShots;
 
+            //Vector2 ddmousePos = Camera.current.ScreenToWorldPoint(Input.mousePosition);
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Debug.Log("Mouse Pos (" + mousePos.ToString() + ")");
             Vector2 direction = (mousePos - (Vector2)transform.position).normalized;
 
             bullet.GetComponent<Rigidbody2D>().velocity = direction * projectileForce;

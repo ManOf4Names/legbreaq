@@ -8,7 +8,8 @@ public class PlayerProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.name != "Player")
+        //TODO collide with wall ,   
+        if (collision.name != "Player" && collision.name == "Enemy")
         {
             if (collision.GetComponent<EnemyRecieveDamage>() != null)
             {
