@@ -932,7 +932,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1025977457, guid: aa4d8841697dd8d499cd1e71d4d14619, type: 3}
       propertyPath: offset
-      value: 0
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 8082873014408024267, guid: aa4d8841697dd8d499cd1e71d4d14619,
         type: 3}
@@ -1027,8 +1027,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf5e452369433a445b33cd522313c15c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPos: {fileID: 0}
-  offset: 1000
+  playerPos: {fileID: 1025977462}
+  offset: 0
 --- !u!81 &957446675
 AudioListener:
   m_ObjectHideFlags: 0
