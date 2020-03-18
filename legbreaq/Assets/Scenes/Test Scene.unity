@@ -930,14 +930,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1025977457, guid: aa4d8841697dd8d499cd1e71d4d14619, type: 3}
-      propertyPath: offset
-      value: 1000
-      objectReference: {fileID: 0}
     - target: {fileID: 8082873014408024267, guid: aa4d8841697dd8d499cd1e71d4d14619,
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082873014408024267, guid: aa4d8841697dd8d499cd1e71d4d14619,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8082873014408024268, guid: aa4d8841697dd8d499cd1e71d4d14619,
         type: 3}
@@ -1100,6 +1101,90 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 897537772}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1056547682
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 160617345559452272, guid: 98721968df1b358458d6c04fdc1d0479,
+        type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6078362473807657166, guid: 98721968df1b358458d6c04fdc1d0479,
+        type: 3}
+      propertyPath: damage
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6078362473807657166, guid: 98721968df1b358458d6c04fdc1d0479,
+        type: 3}
+      propertyPath: whatIsEnemies.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 8220901868176547490, guid: 98721968df1b358458d6c04fdc1d0479,
+        type: 3}
+      propertyPath: m_Name
+      value: MeleePlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 8220901868176547493, guid: 98721968df1b358458d6c04fdc1d0479,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8220901868176547493, guid: 98721968df1b358458d6c04fdc1d0479,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8220901868176547493, guid: 98721968df1b358458d6c04fdc1d0479,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8220901868176547493, guid: 98721968df1b358458d6c04fdc1d0479,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8220901868176547493, guid: 98721968df1b358458d6c04fdc1d0479,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8220901868176547493, guid: 98721968df1b358458d6c04fdc1d0479,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8220901868176547493, guid: 98721968df1b358458d6c04fdc1d0479,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8220901868176547493, guid: 98721968df1b358458d6c04fdc1d0479,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8220901868176547493, guid: 98721968df1b358458d6c04fdc1d0479,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8220901868176547493, guid: 98721968df1b358458d6c04fdc1d0479,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8220901868176547493, guid: 98721968df1b358458d6c04fdc1d0479,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 98721968df1b358458d6c04fdc1d0479, type: 3}
 --- !u!1 &1305478040
 GameObject:
   m_ObjectHideFlags: 0
@@ -1177,6 +1262,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5930002898183457217, guid: 950c619aaa7fee941b95034ff2b4f6d6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5930002898183457222, guid: 950c619aaa7fee941b95034ff2b4f6d6,
         type: 3}

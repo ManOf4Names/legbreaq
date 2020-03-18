@@ -36,7 +36,10 @@ public class PlayerMovement : MonoBehaviour
     {
         TakeInput();
         Move();
-        RotateWeapon();
+        if (weapon)
+        {
+            RotateWeapon();
+        }
         Dash();
 
     }

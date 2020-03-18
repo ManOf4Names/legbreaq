@@ -5,14 +5,23 @@ public class EnemyRecieveDamage : MonoBehaviour
 {
     public float health;
     public float maxHealth;
-
+    //for future Damage animation
+    //public GameObject bloodEffect;
+    //private Animator anim;
     private void Start()
     {
+        //Damage animation
+        //anim = GetComponent<Animator>();
+        //anim.SetBool("isRunning", true);
         health = maxHealth;
     }
 
     public void DealDamage(float damage)
     {
+        //Damage Animation
+        //Instantiate(bloodEffect, transform.position, Quaternion.identity);
+        //TODO: Play sound
+        Debug.Log("dealt" + damage);
         health -= damage;
         CheckDeath();
     }
