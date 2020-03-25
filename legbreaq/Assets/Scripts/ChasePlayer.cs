@@ -1,4 +1,14 @@
-﻿using System.Collections;
+﻿// ===============================
+// AUTHOR     : Corey Dotson
+// CREATE DATE     : 3/23/20
+// PURPOSE     : AI for an enemy that chases the player
+// SPECIAL NOTES: Player tracking uses direction vector, therefore the speed scales down as the enemy approaches the player
+// ===============================
+// Change History: 
+//
+//==================================
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

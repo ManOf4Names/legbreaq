@@ -1,4 +1,14 @@
-﻿using System.Collections;
+﻿// ===============================
+// AUTHOR     : Corey Dotson
+// CREATE DATE     : January 2020
+// PURPOSE     : Randomly generates a network of rooms using a random walker algorithm
+// SPECIAL NOTES: Should be updated to allow for different room prefabs to be spawned for each room type (use an array)
+// ===============================
+// Change History:
+//
+//==================================
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

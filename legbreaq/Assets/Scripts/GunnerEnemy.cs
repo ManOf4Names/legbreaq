@@ -1,4 +1,14 @@
-﻿using System.Collections;
+﻿// ===============================
+// AUTHOR     : Corey Dotson
+// CREATE DATE     : 3/23/20
+// PURPOSE     : AI for an enemy that shoots at the player
+// SPECIAL NOTES: This AI needs its values tweaked a bit so it feels a bit more natural
+// ===============================
+// Change History:
+//
+//==================================
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

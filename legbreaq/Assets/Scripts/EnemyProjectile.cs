@@ -1,4 +1,14 @@
-﻿using System.Collections;
+﻿// ===============================
+// AUTHOR     : Corey Dotson
+// CREATE DATE     : 3/23/20
+// PURPOSE     : Projectile that goes to players last location
+// SPECIAL NOTES: projectile is destroyed when it reaches its destination, make it not do that
+// ===============================
+// Change History:
+//
+//==================================
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
