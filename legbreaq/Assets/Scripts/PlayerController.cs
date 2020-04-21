@@ -39,7 +39,9 @@ public class PlayerController : MonoBehaviour
     {
         TakeInput();
         Move();
+        
         RotateWithMouse();
+       
         Dash();
 
     }
@@ -50,9 +52,6 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void RotateWithMouse()
     {
-        int x = -1000;
-        Debug.Log("working? " + x);
-        x++;
         //rotate gun arm
         Vector3 mousePos = Input.mousePosition;
         Vector3 screenPoint = CamRef.WorldToScreenPoint(transform.localPosition);

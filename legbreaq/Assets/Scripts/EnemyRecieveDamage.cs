@@ -7,9 +7,6 @@ public class EnemyRecieveDamage : MonoBehaviour
     public float maxHealth;
     //for future Damage animation
     //public GameObject bloodEffect;
-
-    //TODO: Remove enemies on player death 
-
     public Animator anim;
     private void Start()
     {
