@@ -7,7 +7,7 @@ public class EnemyRecieveDamage : MonoBehaviour
     public float maxHealth;
     //for future Damage animation
     //public GameObject bloodEffect;
-    //private Animator anim;
+    public Animator anim;
     private void Start()
     {
         //Damage animation

@@ -8,6 +8,7 @@ public class PlayerMeleeWeapon : MonoBehaviour
     public float damage;
     private float attackInterval;
     public float startAttackInterval;
+    private bool facingRight = true;
 
     public Transform attackPos;
     public float attackRange;
@@ -23,6 +24,19 @@ public class PlayerMeleeWeapon : MonoBehaviour
     {
         if (attackInterval <= 0)
         {
+            if (Input.GetKey(KeyCode.D) && !facingRight)
+            {
+                facingRight = true;
+                attackPos.Translate(10, 0, 0);
+                Debug.Log("Facing Left");
+            } 
+            else if(Input.GetKey(KeyCode.A) && facingRight)
+            {
+                facingRight = false;
+                attackPos.Translate(-10, 0, 0);
+                Debug.Log("Facing Right");
+            }
+
             if (Input.GetKey(KeyCode.Mouse0))
             {
 
@@ -30,6 +44,7 @@ public class PlayerMeleeWeapon : MonoBehaviour
                 //Animate Attack
                 //playerAnim.SetTrigger("MeleeAttack");
                 //Deal damage in a circle
+               
                 Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
                 for(int i = 0; i < enemiesToDamage.Length; i++)
                 {
@@ -60,7 +75,7 @@ public class PlayerMeleeWeapon : MonoBehaviour
             if (collision.GetComponent<EnemyRecieveDamage>() != null)
             {
                 collision.GetComponent<EnemyRecieveDamage>().DealDamage(damage);
-                Debug.Log("Damage Delt");
+                Debug.Log(damage + "Damage Delt");
             }
         }
     }
