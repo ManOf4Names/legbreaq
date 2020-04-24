@@ -116,6 +116,15 @@ public class PlayerController : MonoBehaviour
 
 
 
+        // (3/25) I added a function that removes all enemies if K is pressed, remember to remove before release
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            foreach (GameObject go in GameObject.FindGameObjectsWithTag("Enemy"))
+            {
+                Destroy(go);
+            }
+        }
+
 
     }
 

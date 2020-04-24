@@ -1,4 +1,14 @@
-﻿using System.Collections;
+﻿// ===============================
+// AUTHOR     : Corey Dotson
+// CREATE DATE     : February 2020
+// PURPOSE     : Moves camera in discrete amounts
+// SPECIAL NOTES: This is still broken for negative numbers
+// ===============================
+// Change History:
+//
+//==================================
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
