@@ -10,7 +10,7 @@ public class EnemyRecieveDamage : MonoBehaviour
 
     //TODO: Remove enemies on player death 
 
-    public Animator anim;
+    //public Animator anim;
     private void Start()
     {
         //Damage animation

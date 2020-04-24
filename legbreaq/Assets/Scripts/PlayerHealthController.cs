@@ -6,7 +6,7 @@ public class PlayerHealthController : MonoBehaviour
 {
     public static PlayerHealthController instance;
 
-    public int currentHealth;
+    public int currentHealth = 10;
     public int maxHealth;
 
     private void Awake()
@@ -36,8 +36,11 @@ public class PlayerHealthController : MonoBehaviour
 
         if(currentHealth <= 0)
         {
-            PlayerController.instance.gameObject.SetActive(false);
+            //PlayerController.instance.gameObject.SetActive(false);
             UIController.instance.deathScreen.SetActive(true);
         }
+
+        UIController.instance.healthSlider.value = currentHealth;
+        UIController.instance.healthText.text = currentHealth.ToString() + " / " + maxHealth.ToString();
     }
 }

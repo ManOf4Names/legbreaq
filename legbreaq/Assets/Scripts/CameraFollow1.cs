@@ -51,7 +51,7 @@ public class CameraFollow1 : MonoBehaviour
         }
 
         //Debug.Log("Player X = " + playerPos.position.x + " Camera X = " + xShift);
-        //Debug.Log("Player Y = " + playerPos.position.y + " Camera Y = " + yShift);
+        //6 cxDebug.Log("Player Y = " + playerPos.position.y + " Camera Y = " + yShift);
 
         transform.position = new Vector3(xShift + offset, yShift + offset, transform.position.z);
     }
