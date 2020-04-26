@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI; 
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class UIController : MonoBehaviour
     public Text healthText;
     public GameObject deathScreen;
 
+
+    public string newGameScene, mainMenuScene;
     private void Awake()
     {
         instance = this; 
@@ -25,5 +28,15 @@ public class UIController : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void NewGame()
+    {
+        SceneManager.LoadScene(newGameScene);
+    }
+
+    public void ReturnToMainMenu()
+    {
+        SceneManager.LoadScene(mainMenuScene);
     }
 }

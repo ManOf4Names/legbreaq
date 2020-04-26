@@ -20,6 +20,9 @@ public class EnemyProjectile : MonoBehaviour
     private Vector2 target;
 
     // Start is called before the first frame update
+    public GameObject wallImpactEffect;
+    public GameObject playerImpactEffect;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -39,10 +42,21 @@ public class EnemyProjectile : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") || other.CompareTag("Wall"))
+        if (other.CompareTag("Player"))
         {
+            Instantiate(playerImpactEffect, transform.position, transform.rotation);
+            //one health per hit
+            PlayerHealthController.instance.DamagePlayer();
             DestroyProjectile();
         }
+            
+        if(other.CompareTag("Wall"))
+        {
+            Instantiate(wallImpactEffect, transform.position, transform.rotation);
+            DestroyProjectile();
+
+        }
+
     }
 
     void DestroyProjectile()

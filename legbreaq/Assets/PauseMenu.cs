@@ -5,8 +5,11 @@ using UnityEngine.SceneManagement;
 
 
 //Using Brakeys video pause menu
+
 public class PauseMenu : MonoBehaviour
 {
+
+    public string mainMenuScene;
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
 
@@ -42,7 +45,7 @@ public class PauseMenu : MonoBehaviour
     public void LoadMenu()
     {
         Debug.Log("Loading Menu");
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene(mainMenuScene);
     }
 
     public void QuitGame()

@@ -174,8 +174,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4f4337ad20a679499093e345f93dd5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondsToDestroy: 3
+  secondsToDestroy: 2
   damage: 0
+  wallImpactEffect: {fileID: 3635241985136153269, guid: 4df005bdd1112e941b028a828f55ff37,
+    type: 3}
+  enemyImpactEffect: {fileID: 8902440800948985513, guid: 9966954581621bb4cb8e873fe1c30b35,
+    type: 3}
 --- !u!1 &8475781368664657723
 GameObject:
   m_ObjectHideFlags: 0
