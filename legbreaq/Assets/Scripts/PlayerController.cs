@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+
 /// <summary>
 /// Script for handling player movement (and animations) 
 /// </summary>
@@ -26,22 +27,29 @@ public class PlayerController : MonoBehaviour
     //Dash duration
     public float dashCounter;
 
-    
+    public List<PlayerShoot> availableGuns = new List<PlayerShoot>();
+    private int currentGun;
+
     void Start()
     {
         //
         CamRef = Camera.main; 
         animator = GetComponent<Animator>();
+
+        UIController.instance.currentGun.sprite = availableGuns[currentGun].gunUI;
+        
         //swordCol = GameObject.Find("SwordCollider").GetComponent<Collider2D>();*/
     }
 
     private void Update()
     {
+       
         TakeInput();
         Move();
         RotateWithMouse();
         Dash();
-
+        WeaponSwitch();
+        
     }
 
 
@@ -71,6 +79,28 @@ public class PlayerController : MonoBehaviour
         Vector2 offset = new Vector2(mousePos.x - screenPoint.x, mousePos.y - screenPoint.y);
         float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
         weapon.rotation = Quaternion.Euler(0, 0, angle);
+    }
+
+    private void WeaponSwitch()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if (availableGuns.Count > 0)
+            {
+                currentGun++;
+                if(currentGun >= availableGuns.Count)
+                {
+                    currentGun = 0;
+                }
+
+                SwitchGun();
+
+            }
+            else
+            {
+                Debug.Log("no guns ");
+            }
+        }
     }
 
     private void Move()
@@ -170,6 +200,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
+    public void SwitchGun()
+    {
+        foreach(PlayerShoot gun in availableGuns)
+        {
+            gun.gameObject.SetActive(false);
+
+        }
+        availableGuns[currentGun].gameObject.SetActive(true);
+        UIController.instance.currentGun.sprite = availableGuns[currentGun].gunUI;
+    }
     
 
 

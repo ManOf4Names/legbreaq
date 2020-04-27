@@ -12,6 +12,7 @@ public class UIController : MonoBehaviour
     public Text healthText;
     public GameObject deathScreen;
 
+    public Image currentGun;
 
     public string newGameScene, mainMenuScene;
     private void Awake()

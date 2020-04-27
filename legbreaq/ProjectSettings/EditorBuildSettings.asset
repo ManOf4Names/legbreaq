@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 3a3d58c04499c144b861fdcd90079035
   - enabled: 1
+    path: Assets/Scenes/Caleb Test Scene.unity
+    guid: 083a90d4711138f4fa7d2d25f6067e66
+  - enabled: 1
     path: Assets/Scenes/Level01.unity
     guid: aaf5177b944771f47818bfa51cf5c84b
   m_configObjects: {}
