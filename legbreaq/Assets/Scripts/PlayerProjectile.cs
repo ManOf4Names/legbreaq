@@ -13,7 +13,7 @@ public class PlayerProjectile : MonoBehaviour
     {
         
         //TODO collide with wall ,   
-        if (collision.tag != "Player" && collision.tag == "Enemy")
+        if (collision.tag != "Player" && (collision.tag == "Enemy" || collision.tag == "Boss"))
         {
             Instantiate(enemyImpactEffect, transform.position, transform.rotation);
             if (collision.GetComponent<EnemyRecieveDamage>() != null)
