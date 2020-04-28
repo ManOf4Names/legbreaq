@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7559265337996074787}
   - component: {fileID: 2442709228433011813}
   m_Layer: 0
-  m_Name: EnemyProjectileImpactEffect
+  m_Name: PlayerTakeDamageEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -975,7 +975,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 10
+        scalar: 20
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -1026,7 +1026,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
       cycleCount: 1
-      repeatInterval: 0.01
+      repeatInterval: 0.02
       probability: 1
   SizeModule:
     enabled: 1

@@ -20,6 +20,8 @@ public class ChargePlayer : MonoBehaviour
     private Vector2 movement;
     float timer;
     public float waitingTime = 2;
+    // Start is called before the first frame update
+    public GameObject playerImpactEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +51,18 @@ public class ChargePlayer : MonoBehaviour
             }
         }
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Instantiate(playerImpactEffect, transform.position, transform.rotation);
+            //one health per hit
+            PlayerHealthController.instance.DamagePlayer();
+        }
+
+    }
+
 
     void moveCharacter(Vector2 direction)
     {

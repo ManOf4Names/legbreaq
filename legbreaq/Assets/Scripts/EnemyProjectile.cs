@@ -54,7 +54,6 @@ public class EnemyProjectile : MonoBehaviour
         {
             Instantiate(wallImpactEffect, transform.position, transform.rotation);
             DestroyProjectile();
-
         }
 
     }
