@@ -43,7 +43,7 @@ public class PlayerShoot : MonoBehaviour
 
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             //Vector2 mousePos = Input.mousePosition;
-            Debug.Log("Mouse Pos (" + mousePos + ")");
+            //Debug.Log("Mouse Pos (" + mousePos + ")");
             Vector2 direction = (mousePos - (Vector2)transform.position).normalized;
 
             bullet.GetComponent<Rigidbody2D>().velocity = direction * projectileForce;

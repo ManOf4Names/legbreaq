@@ -105,11 +105,14 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
+
         //dont speed up on diagonal. 
         direction.Normalize();
         //use delta time to avoid speed scaling with framerate
         transform.Translate(direction * moveSpeed * Time.deltaTime);
-        Debug.Log("x direction: " + direction.x);
+
+
+        //Debug.Log("x direction: " + direction.x);
         if (direction.x != 0 || direction.y != 0)
         {
             SetAnimatorMovement(direction);
@@ -120,6 +123,7 @@ public class PlayerController : MonoBehaviour
             //Prioritize idle animation -> set walking priority to 0
             animator.SetLayerWeight(1, 0);
         }
+        
     }
 
     //Maybe implement configurable settings later

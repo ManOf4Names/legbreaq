@@ -31,8 +31,6 @@ public class GunnerEnemy : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rb = this.GetComponent<Rigidbody2D>();
         timeBtwShots = startTimeBtwShots;
-
-
     }
 
     // Update is called once per frame

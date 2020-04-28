@@ -24,7 +24,7 @@ public class EnemyRecieveDamage : MonoBehaviour
         //Damage Animation
         //Instantiate(bloodEffect, transform.position, Quaternion.identity);
         //TODO: Play sound
-        Debug.Log("dealt" + damage);
+        //Debug.Log("dealt" + damage);
         health -= damage;
         CheckDeath();
     }

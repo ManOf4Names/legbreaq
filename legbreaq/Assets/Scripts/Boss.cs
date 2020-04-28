@@ -20,9 +20,14 @@ public class Boss: EnemyRecieveDamage
     public Transform source;
     public Slider healthBar;
     public GameObject projectile;
-    public float timeBetweenShots = 0.5f;
+    public GameObject[] enemies;
+    public float startTimeBetweenShots;
+    public float timeBetweenShots;
 
+    private int i = 0;
     private Vector3 offset = new Vector3(100, 0, 0);
+    private bool alternate = true;
+    private bool called = false;
 
     private void Start()
     {
@@ -36,24 +41,97 @@ public class Boss: EnemyRecieveDamage
     void Update()
     {
         healthBar.value = health;
-        if (timeBetweenShots > 0) {
-            timeBetweenShots -= Time.deltaTime;
-        }
-
-        if (timeBetweenShots == 0)
-        {
-            timeBetweenShots = 1.5f;
-        }
-
     }
 
     public void shoot()
     {
         if (timeBetweenShots <= 0)
         {
-            GameObject bullet = Instantiate(projectile, source.position, source. rotation);
-            GameObject bullet1 = Instantiate(projectile, source.position + offset, source.rotation);
-            GameObject bullet2 = Instantiate(projectile, source.position - offset, source.rotation);
+            Instantiate(projectile, source.position, source.rotation);
+            Instantiate(projectile, source.position + offset, source.rotation);
+            Instantiate(projectile, source.position - offset, source.rotation);
+            Instantiate(projectile, source.position + 2 * offset, source.rotation);
+            Instantiate(projectile, source.position - 2 * offset, source.rotation);
+            timeBetweenShots = startTimeBetweenShots;
+        }
+        else
+        {
+            timeBetweenShots -= Time.deltaTime;
+        }
+    }
+
+    public void thirdStage()
+    {
+        if (timeBetweenShots <= 0)
+            if (alternate)
+            {
+                {
+                    for (int j = 0; j < 7; j++)
+                    {
+                        Instantiate(projectile, source.position, source.rotation);
+                        Instantiate(projectile, source.position + offset, source.rotation);
+                        Instantiate(projectile, source.position - offset, source.rotation);
+                    }
+
+                    timeBetweenShots = startTimeBetweenShots;
+                }
+            }
+            else
+            {
+                Instantiate(projectile, source.position, source.rotation);
+                Instantiate(projectile, source.position + offset, source.rotation);
+                Instantiate(projectile, source.position - offset, source.rotation);
+                Instantiate(projectile, source.position + 2 * offset, source.rotation);
+                Instantiate(projectile, source.position - 2 * offset, source.rotation);
+            }
+        alternate = !alternate;
+    }
+
+
+    public void bigSpawn()
+    {
+        if (!called)
+        {
+            Instantiate(enemies[0], source.position, Quaternion.identity);
+            Instantiate(enemies[3], source.position + offset, Quaternion.identity);
+            Instantiate(enemies[2], source.position - offset, Quaternion.identity);
+            Instantiate(enemies[1], source.position + 2 * offset, Quaternion.identity);
+            Instantiate(enemies[0], source.position - 2 * offset, Quaternion.identity);
+        }
+        called = true;
+    }
+
+    public void laser()
+    {
+        if (timeBetweenShots <= 0)
+        {
+            Instantiate(projectile, source.position, source.rotation);
+            Instantiate(projectile, source.position + offset, source.rotation);
+            Instantiate(projectile, source.position - offset, source.rotation);
+            timeBetweenShots = startTimeBetweenShots;
+        }
+        else
+        {
+            timeBetweenShots -= Time.deltaTime;
+        }
+    }
+
+    public void spawnEnemies()
+    {
+        if (timeBetweenShots <= 0)
+        {
+
+            Instantiate(enemies[i], source.position, Quaternion.identity);
+            Instantiate(enemies[i], source.position + offset, Quaternion.identity);
+            Instantiate(enemies[i], source.position - offset, Quaternion.identity);
+            Instantiate(enemies[i], source.position + 2 * offset, Quaternion.identity);
+            Instantiate(enemies[i], source.position - 2 * offset, Quaternion.identity);
+            timeBetweenShots = startTimeBetweenShots;
+            i = (i + 1) % 4;
+        }
+        else
+        {
+            timeBetweenShots -= Time.deltaTime;
         }
     }
 

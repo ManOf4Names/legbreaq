@@ -2,29 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FirstStage : StateMachineBehaviour
+public class SecondStage : StateMachineBehaviour
 {
-    private Transform playerPos;
+
     private Boss boss;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        boss = GameObject.FindGameObjectWithTag("Boss").GetComponent<Boss>();
-        boss.startTimeBetweenShots = 1.0f;
-        boss.timeBetweenShots = 1.0f;
+        boss = GameObject.FindGameObjectWithTag("Boss").GetComponent<Boss>();        
+        boss.startTimeBetweenShots = 3.0f;
+        boss.timeBetweenShots = 0.1f;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        boss.shoot();
-        if (boss.health < 1000)
+        boss.spawnEnemies();
+        if (boss.health < 500)
         {
-            animator.SetTrigger("SecondStage");
+            animator.SetTrigger("ThirdStage");
         }
     }
 
-    //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
+    // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     //{
     //    

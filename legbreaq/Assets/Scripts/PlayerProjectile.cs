@@ -20,7 +20,7 @@ public class PlayerProjectile : MonoBehaviour
             {
 
                 collision.GetComponent<EnemyRecieveDamage>().DealDamage(damage);
-                Debug.Log("Damage Dealt by PlayerProjectile");
+                //Debug.Log("Damage Dealt by PlayerProjectile");
             }
             //delete projectile 
 
