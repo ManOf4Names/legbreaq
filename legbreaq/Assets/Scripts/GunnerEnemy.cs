@@ -22,6 +22,7 @@ public class GunnerEnemy : MonoBehaviour
     private float timeBtwShots;
     public float startTimeBtwShots;
 
+    public GameObject playerImpactEffect;
     public GameObject projectile;
     public Transform player;
 
@@ -64,5 +65,15 @@ public class GunnerEnemy : MonoBehaviour
     void moveCharacter(Vector2 direction, float speedScale)
     {
         rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * speedScale * Time.deltaTime));
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Instantiate(playerImpactEffect, transform.position, transform.rotation);
+            //one health per hit
+            PlayerHealthController.instance.DamagePlayer();
+        }
     }
 }

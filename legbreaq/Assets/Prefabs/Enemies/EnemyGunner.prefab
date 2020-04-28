@@ -181,6 +181,8 @@ MonoBehaviour:
   stopDistance: 70
   retreatDistance: 60
   startTimeBtwShots: 1
+  playerImpactEffect: {fileID: 4446587178539430866, guid: 540c5bdf0a26f7441944d8ec0a59a3e8,
+    type: 3}
   projectile: {fileID: 3172914067233684091, guid: c2dcb0f335348dc4da5966a4c513bb81,
     type: 3}
   player: {fileID: 0}

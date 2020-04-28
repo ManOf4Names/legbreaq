@@ -180,3 +180,5 @@ MonoBehaviour:
   player: {fileID: 0}
   chargeSpeed: 6
   waitingTime: 2
+  playerImpactEffect: {fileID: 4446587178539430866, guid: 540c5bdf0a26f7441944d8ec0a59a3e8,
+    type: 3}

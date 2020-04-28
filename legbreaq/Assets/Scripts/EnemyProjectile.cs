@@ -49,14 +49,6 @@ public class EnemyProjectile : MonoBehaviour
             PlayerHealthController.instance.DamagePlayer();
             DestroyProjectile();
         }
-            
-        if(other.CompareTag("Wall"))
-        {
-            Instantiate(wallImpactEffect, transform.position, transform.rotation);
-            DestroyProjectile();
-
-        }
-
     }
 
     void DestroyProjectile()
