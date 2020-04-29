@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/_preload.unity
     guid: ccdee72860a49e042894739822c3dbe0
   - enabled: 1
