@@ -131,3 +131,4 @@ MonoBehaviour:
   projectileForce: 100
   source: {fileID: 2928319897503421558}
   timeBetweenShots: 0.7
+  gunUI: {fileID: 0}

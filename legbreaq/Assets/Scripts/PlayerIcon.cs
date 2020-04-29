@@ -18,6 +18,14 @@ public class PlayerIcon: MonoBehaviour
 
     public Transform playerPos;
 
+
+
+
+    void start()
+    {
+        playerPos = GameObject.FindGameObjectWithTag("Player").transform;
+    }
+
     void FixedUpdate()
     {
         transform.position = new Vector3(playerPos.position.x, playerPos.position.y, -300);

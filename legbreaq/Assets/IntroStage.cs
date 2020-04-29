@@ -17,7 +17,7 @@ public class IntroStage : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         boss.laser();
-        if (boss.health < 1500)
+        if (boss.health < 3000)
         {
             animator.SetTrigger("FirstStage");
         }

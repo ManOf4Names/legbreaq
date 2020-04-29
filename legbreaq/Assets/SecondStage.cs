@@ -18,7 +18,7 @@ public class SecondStage : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         boss.spawnEnemies();
-        if (boss.health < 500)
+        if (boss.health < 1000)
         {
             animator.SetTrigger("ThirdStage");
         }

@@ -57,6 +57,7 @@ public class LevelMaker : MonoBehaviour
         CreateRooms();
         FixRoom();
         SpawnLevel();
+        SpawnTeleporters();
     }
     void Setup()
     {
@@ -86,6 +87,13 @@ public class LevelMaker : MonoBehaviour
         //add walker to list
         walkers.Add(newWalker);
     }
+
+    void SpawnTeleporters()
+    {
+        GameObject[] teleporters = GameObject.FindGameObjectsWithTag("Teleporter");
+        teleporters[Random.Range(0, teleporters.Length)].GetComponent<TeleporterSpawn>().picked = true;
+    }
+
     void CreateRooms()
     {
         int iterations = 0;//loop will not run forever

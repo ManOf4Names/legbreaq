@@ -18,7 +18,7 @@ public class FirstStage : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         boss.shoot();
-        if (boss.health < 1000)
+        if (boss.health < 2000)
         {
             animator.SetTrigger("SecondStage");
         }

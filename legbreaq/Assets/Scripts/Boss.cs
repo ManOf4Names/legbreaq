@@ -19,13 +19,16 @@ public class Boss: EnemyRecieveDamage
     public float projectileDamage;
     public Transform source;
     public Slider healthBar;
+    public Text textBox;
+    public Text healthText;
     public GameObject projectile;
     public GameObject[] enemies;
     public float startTimeBetweenShots;
     public float timeBetweenShots;
+    public float textTime = 2.0f;
 
     private int i = 0;
-    private Vector3 offset = new Vector3(100, 0, 0);
+    private Vector3 offset = new Vector3(70, 0, 0);
     private bool alternate = true;
     private bool called = false;
 
@@ -35,12 +38,22 @@ public class Boss: EnemyRecieveDamage
         //anim = GetComponent<Animator>();
         //anim.SetBool("isRunning", true);
         health = maxHealth;
+        textBox.text = "BOSS FIGHT";
     }
 
     // Update is called once per frame
     void Update()
     {
         healthBar.value = health;
+        healthText.text = health.ToString();
+        if (textTime <= 0)
+        {
+            textBox.text = "";
+        }
+        else
+        {
+            textTime -= Time.deltaTime;
+        }
     }
 
     public void shoot()

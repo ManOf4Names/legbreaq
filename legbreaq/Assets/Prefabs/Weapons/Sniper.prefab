@@ -47,7 +47,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4228463800157002664
 Transform:
   m_ObjectHideFlags: 0
@@ -131,3 +131,4 @@ MonoBehaviour:
   projectileForce: 400
   source: {fileID: 4228463799410801150}
   timeBetweenShots: 0.5
+  gunUI: {fileID: 0}
