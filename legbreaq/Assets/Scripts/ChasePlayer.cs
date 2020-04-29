@@ -18,7 +18,7 @@ public class ChasePlayer : MonoBehaviour
     public float moveSpeed = 1f;
     private Rigidbody2D rb;
     private Vector2 movement;
-    
+    public GameObject playerImpactEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -57,5 +57,13 @@ public class ChasePlayer : MonoBehaviour
         rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
     }
 
-
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Instantiate(playerImpactEffect, transform.position, transform.rotation);
+            //one health per hit
+            PlayerHealthController.instance.DamagePlayer();
+        }
+    }
 }

@@ -8,6 +8,9 @@ TagManager:
   - Rooms
   - Wall
   - Enemy
+  - Boss
+  - Projectile
+  - Teleporter
   layers:
   - Default
   - TransparentFX
@@ -17,7 +20,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Enemy
   - 
   - 
   - 

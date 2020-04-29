@@ -5,13 +5,15 @@ using UnityEngine;
 public class PlayerShoot : MonoBehaviour
 {
     public GameObject projectile;
-    public float minDamage;
-    public float maxDamage;
+    public float minDamage = 20;
+    public float maxDamage = 40;
     public float projectileForce;
 
     public Transform source;
-    public float fireRateCounter;
+    private float fireRateCounter;
     public float timeBetweenShots;
+
+    public Sprite gunUI;
 
 
     //TODO: combine all update functions to one caller
@@ -25,7 +27,6 @@ public class PlayerShoot : MonoBehaviour
         if (Input.GetMouseButtonDown(0) || Input.GetMouseButton(0))
         {
             FireWeapon();
-        
         }
         
       
@@ -42,7 +43,7 @@ public class PlayerShoot : MonoBehaviour
 
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             //Vector2 mousePos = Input.mousePosition;
-            Debug.Log("Mouse Pos (" + mousePos + ")");
+            //Debug.Log("Mouse Pos (" + mousePos + ")");
             Vector2 direction = (mousePos - (Vector2)transform.position).normalized;
 
             bullet.GetComponent<Rigidbody2D>().velocity = direction * projectileForce;
@@ -51,12 +52,6 @@ public class PlayerShoot : MonoBehaviour
 
             //TODO: Call gunshot sound here
         }
-    }
-
-    private void OnBecameInvisible()
-    {
-        Debug.Log("Bullet Invis");
-        Destroy(gameObject);
     }
 
 
