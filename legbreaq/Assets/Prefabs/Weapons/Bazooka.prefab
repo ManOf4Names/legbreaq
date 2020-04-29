@@ -126,8 +126,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 4792543045688136366, guid: 8e7b276cd9631dd4c9e61febc6def3a3,
     type: 3}
-  minDamage: 99
-  maxDamage: 120
+  minDamage: 100
+  maxDamage: 180
   projectileForce: 100
   source: {fileID: 2928319897503421558}
   timeBetweenShots: 0.7

@@ -6,16 +6,16 @@ using UnityEngine.SceneManagement;
 public class Teleporter : MonoBehaviour
 {
 
-    public string firewallScene;
+    public string nextScene;
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        //if (GameObject.FindGameObjectWithTag("Enemy") == null)
-        //{
+        if (GameObject.FindGameObjectWithTag("Enemy") == null)
+        {
             if (other.CompareTag("Player"))
             {
-                SceneManager.LoadScene(firewallScene);
+                SceneManager.LoadScene(nextScene);
             }
-        //}
+        }
     }
 }

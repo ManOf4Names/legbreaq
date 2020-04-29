@@ -347,7 +347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06afaec37b15e454180dd1eda547cda2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firewallScene: Firewall
+  nextScene: Level 2
 --- !u!1 &6799592362621444444
 GameObject:
   m_ObjectHideFlags: 0
