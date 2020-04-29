@@ -39,17 +39,17 @@ public class CameraFollow1 : MonoBehaviour
             xShift = 200 * ((int)playerPos.position.x / 200) + 200;
             yShift = 200 * ((int)playerPos.position.y / 200);
         }
-        else if (playerPos.position.x < 0 && Math.Abs(playerPos.position.x) % 200 > 100)
+        else if (playerPos.position.x < 0 && Math.Abs((playerPos.position.x) % 200) > 100)
         {
             xShift = 200 * ((int)playerPos.position.x / 200) - 200;
             yShift = 200 * ((int)playerPos.position.y / 200);
         }
-        else if (playerPos.position.y > 0 && playerPos.position.y % 200 > 100)
+        else if (playerPos.position.y > 0 && Math.Abs(playerPos.position.y % 200) > 100)
         {
             xShift = 200 * ((int)playerPos.position.x / 200);
             yShift = 200 * ((int)playerPos.position.y / 200) + 200;
         } 
-        else if (playerPos.position.y < 0 && Math.Abs(playerPos.position.y) % 200 > 100)
+        else if (playerPos.position.y < 0 && Math.Abs((playerPos.position.y) % 200) > 100)
         {
             xShift = 200 * ((int)playerPos.position.x / 200);
             yShift = 200 * ((int)playerPos.position.y / 200) - 200;
