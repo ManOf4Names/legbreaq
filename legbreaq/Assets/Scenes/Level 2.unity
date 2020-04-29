@@ -541,6 +541,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3340464652839710759, guid: 05764a0735f2dd543aa2e95ff438ffe2,
+        type: 3}
+      propertyPath: newGameScene
+      value: Level 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3340464652839710763, guid: 05764a0735f2dd543aa2e95ff438ffe2,
         type: 3}
       propertyPath: m_LocalPosition.x
